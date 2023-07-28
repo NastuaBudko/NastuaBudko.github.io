@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   password: string = '';
   passwordStrength: string = '';
+  title: string = 'my-angular-project';
 
-  calculatePasswordStrength() {
+  calculatePasswordStrength(): void {
     if (!this.password) {
       this.passwordStrength = ''; 
     } else if (this.password.length < 6) {
