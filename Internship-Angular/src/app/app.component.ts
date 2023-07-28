@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Internship-Angular';
+  password: string = '';
+  passwordStrength: string = '';
+
+  calculatePasswordStrength() {
+    if (!this.password) {
+      this.passwordStrength = ''; 
+    } else if (this.password.length < 6) {
+      this.passwordStrength = 'easy'; 
+    } else if (this.password.length < 10) {
+      this.passwordStrength = 'medium'; 
+    } else {
+      this.passwordStrength = 'strong'; 
+    }
+  }
 }
